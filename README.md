@@ -57,14 +57,14 @@ console.log(commands)
 /*
 [
   {
-    "url": "keydown",
+    "url": "element/foo/value",
     "data": {
       "type": "keyDown",
       "value": ""
     }
   },
   {
-    "url": "keyup",
+    "url": "element/foo/value",
     "data": {
       "type": "keyUp",
       "value": ""
@@ -76,7 +76,9 @@ console.log(commands)
       "type": "pointerMove",
       "duration": 0,
       "x": 100,
-      "y": 100
+      "y": 100,
+      "xoffset": 100,
+      "yoffset": 100
     }
   },
   {
@@ -93,7 +95,7 @@ console.log(commands)
       "button": 0
     }
   }
-]  
+]
 */
 ```
 

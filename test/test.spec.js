@@ -33,7 +33,7 @@ describe('static #transform', () => {
   let compatActions
 
   beforeEach(() => {
-    compatActions = WebdriverActions.transform(outerActions)
+    compatActions = WebdriverActions.transform(outerActions, { activeElementId: 'foo' })
   })
 
   it('should return all the inner commands', () => {
@@ -60,12 +60,12 @@ describe('static #transform', () => {
   })
 
   describe('transformations', () => {
-    it('should map keyDown to keydown', () => {
-      compatActions[0].url.should.equal('keydown')
+    it('should map keyDown to element/[active-element-id]/value', () => {
+      compatActions[0].url.should.equal('element/foo/value')
     })
 
-    it('should map keyUp to keyup', () => {
-      compatActions[1].url.should.equal('keyup')
+    it('should map keyUp to element/[active-element-id]/value', () => {
+      compatActions[1].url.should.equal('element/foo/value')
     })
 
     it('should map pointerMove to moveto', () => {

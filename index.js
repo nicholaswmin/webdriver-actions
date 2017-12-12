@@ -5,11 +5,11 @@ class WebDriverActions {
 
   }
 
-  static transform(outerActions) {
+  static transform(outerActions, { activeElementId }) {
     return outerActions.reduce((arr, outerAction) => {
       arr = arr.concat(outerAction.actions.reduce((arr, action) => {
         arr.push({
-          url: this.getMap()[outerAction.type][action.type],
+          url: this.getMap({ activeElementId })[outerAction.type][action.type],
           data: action.hasOwnProperty('x') && action.hasOwnProperty('y') ?
                 Object.assign(action, { xoffset: action.x, yoffset: action.y }) :
                 action
@@ -22,11 +22,11 @@ class WebDriverActions {
     }, [])
   }
 
-  static getMap() {
+  static getMap({ activeElementId }) {
     return {
       key: {
-        keyDown: 'keydown',
-        keyUp: 'keyup'
+        keyDown: `element/${activeElementId}/value`,
+        keyUp: `element/${activeElementId}/value`,
       },
       pointer: {
         pointerMove: 'moveto',

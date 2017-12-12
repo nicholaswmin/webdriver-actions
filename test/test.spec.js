@@ -47,7 +47,7 @@ describe('static #transform', () => {
     })
   })
 
-  it('includes the inner action as data', () => {
+  it('should include the key value in an array for keyDown/keyUp transformations', () => {
     compatActions[0].data.should.deep.equal({
       value: [outerActions[0].actions[0].value]
     })

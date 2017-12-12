@@ -14,7 +14,7 @@ As of December 2017 the [Actions API][actions-api] is only implemented in
 
 This module takes a series of Actions API compatible actions and transforms
 them to backwards-compatible WebDriver commands that work with current versions
-of [chromedriver][chromedriver] and [safaridriver][safaridriver] - 
+of [chromedriver][chromedriver] and [safaridriver][safaridriver] -
 where possible.
 
 This should become obsolete as soon as all modern browser web-drivers support
@@ -23,6 +23,10 @@ the Actions API.
 You can track chromedriver's progress [here][chromedriver-features-schedule].
 
 ## Usage
+
+```bash
+$ npm i --save webdriver-actions
+```
 
 ```javascript
 const WebdriverActions = require('webdriver-actions')

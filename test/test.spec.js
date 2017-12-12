@@ -51,12 +51,12 @@ describe('static #transform', () => {
     compatActions[0].data.should.deep.equal(outerActions[0].actions[0])
   })
 
-  it('pointerMove to moveto transformations include xOffset/yOffset props', () => {
-    compatActions[2].data.should.have.property('xOffset')
-    compatActions[2].data.should.have.property('yOffset')
+  it('should include xoffset/yoffset props for moveto transformations', () => {
+    compatActions[2].data.should.have.property('xoffset')
+    compatActions[2].data.should.have.property('yoffset')
 
-    compatActions[2].data.xOffset.should.equal(outerActions[1].actions[0].x)
-    compatActions[2].data.yOffset.should.equal(outerActions[1].actions[0].y)
+    compatActions[2].data.xoffset.should.equal(outerActions[1].actions[0].x)
+    compatActions[2].data.yoffset.should.equal(outerActions[1].actions[0].y)
   })
 
   describe('transformations', () => {

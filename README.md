@@ -60,26 +60,20 @@ console.log(commands)
 /*
 [
   {
-    "url": "element/foo-active-element-id/value",
+    "url": "element/foo/value",
     "data": {
-      "type": "keyDown",
-      "value": ""
+      "value": [ "" ]
     }
   },
   {
-    "url": "element/foo-active-element-id/value",
+    "url": "element/foo/value",
     "data": {
-      "type": "keyUp",
-      "value": ""
+      "value": [ "" ]
     }
   },
   {
     "url": "moveto",
     "data": {
-      "type": "pointerMove",
-      "duration": 0,
-      "x": 100,
-      "y": 100,
       "xoffset": 100,
       "yoffset": 100
     }
@@ -87,14 +81,12 @@ console.log(commands)
   {
     "url": "buttonup",
     "data": {
-      "type": "pointerUp",
       "button": 0
     }
   },
   {
     "url": "buttondown",
     "data": {
-      "type": "pointerDown",
       "button": 0
     }
   }

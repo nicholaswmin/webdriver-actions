@@ -48,7 +48,9 @@ describe('static #transform', () => {
   })
 
   it('includes the inner action as data', () => {
-    compatActions[0].data.should.deep.equal(outerActions[0].actions[0])
+    compatActions[0].data.should.deep.equal({
+      value: [outerActions[0].actions[0].value]
+    })
   })
 
   it('should include xoffset/yoffset props for moveto transformations', () => {

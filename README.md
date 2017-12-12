@@ -31,6 +31,9 @@ $ npm i --save webdriver-actions
 ```javascript
 const WebdriverActions = require('webdriver-actions')
 
+// - 1st argument, an object containing W3C Actions
+// - 2nd argument, the active element ID - will be used to dispatch keyboard
+//   values
 const commands = WebdriverActions.transform([
   {
     type: 'key',
@@ -50,21 +53,21 @@ const commands = WebdriverActions.transform([
        { type: 'pointerDown', 'button': 0 }
      ]
    }
-])
+], { activeElementId: 'foo-active-element-id'})
 
 console.log(commands)
 
 /*
 [
   {
-    "url": "element/foo/value",
+    "url": "element/foo-active-element-id/value",
     "data": {
       "type": "keyDown",
       "value": ""
     }
   },
   {
-    "url": "element/foo/value",
+    "url": "element/foo-active-element-id/value",
     "data": {
       "type": "keyUp",
       "value": ""

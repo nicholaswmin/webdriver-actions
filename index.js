@@ -10,9 +10,7 @@ class WebDriverActions {
       arr = arr.concat(outerAction.actions.reduce((arr, action) => {
         arr.push({
           url: this.getMap({ activeElementId })[outerAction.type][action.type],
-          data: action.hasOwnProperty('x') && action.hasOwnProperty('y') ?
-                Object.assign(action, { xoffset: action.x, yoffset: action.y }) :
-                action
+          data: this.createPayloadForAction({ type: outerAction.type, action })
         })
 
         return arr
@@ -20,6 +18,30 @@ class WebDriverActions {
 
       return arr
     }, [])
+  }
+
+  static createPayloadForAction({ type, action }) {
+    switch (type) {
+      case 'key':
+        return { value: [ action.value ] }
+        break;
+      case 'pointer':
+        switch (action.type) {
+          case 'pointerMove':
+            return {
+              xoffset: action.x,
+              yoffset: action.y
+            }
+            break;
+          default:
+          return {
+            button: action.button
+          }
+        }
+        break;
+      default:
+        return action
+    }
   }
 
   static getMap({ activeElementId }) {

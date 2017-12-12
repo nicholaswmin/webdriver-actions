@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/nicholaswmin/webdriver-actions.svg?branch=master)](https://travis-ci.org/nicholaswmin/webdriver-actions)
 
 Backwards-compatible W3C [WebDriver][webdriver-spec] [Actions API][actions-api]
-bindings
+commands.
 
 **Important:** This is still a WIP. Most actions are not implemented yet.
 

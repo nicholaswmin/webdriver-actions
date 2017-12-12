@@ -30,7 +30,6 @@ $ npm i --save webdriver-actions
 
 ```javascript
 const WebdriverActions = require('webdriver-actions')
-const webdriverActions = new WebdriverActions()
 
 const commands = WebdriverActions.transform([
   {

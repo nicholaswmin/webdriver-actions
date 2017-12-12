@@ -8,8 +8,6 @@ const WebdriverActions = require('../index.js')
 chai.should()
 chai.use(compatActionAssertion)
 
-const webdriverActions = new WebdriverActions()
-
 const outerActions = [
   {
     type: 'key',

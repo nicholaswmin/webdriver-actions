@@ -47,8 +47,16 @@ describe('static #transform', () => {
     })
   })
 
-  it('include the inner action as data', () => {
+  it('includes the inner action as data', () => {
     compatActions[0].data.should.deep.equal(outerActions[0].actions[0])
+  })
+
+  it('pointerMove to moveto transformations include xOffset/yOffset props', () => {
+    compatActions[2].data.should.have.property('xOffset')
+    compatActions[2].data.should.have.property('yOffset')
+
+    compatActions[2].data.xOffset.should.equal(outerActions[1].actions[0].x)
+    compatActions[2].data.yOffset.should.equal(outerActions[1].actions[0].y)
   })
 
   describe('transformations', () => {

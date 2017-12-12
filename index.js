@@ -10,7 +10,9 @@ class WebDriverActions {
       arr = arr.concat(outerAction.actions.reduce((arr, action) => {
         arr.push({
           url: this.getMap()[outerAction.type][action.type],
-          data: action
+          data: action.x && action.y ?
+                Object.assign(action, { xOffset: action.x, yOffset: action.y }) :
+                action
         })
 
         return arr

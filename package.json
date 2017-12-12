@@ -1,6 +1,6 @@
 {
   "name": "webdriver-actions",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Backwards-compatible W3C WebDriver Actions API bindings Edit",
   "main": "index.js",
   "directories": {

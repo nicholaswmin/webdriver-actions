@@ -8,7 +8,6 @@ yarn-error.log*
 # npm lock file
 package-lock.json
 
-
 # Runtime data
 pids
 *.pid
